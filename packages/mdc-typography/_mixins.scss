@@ -35,6 +35,10 @@
   font-weight: #{map-get($style-props, font-weight)};
   letter-spacing: map-get($style-props, letter-spacing);
   line-height: map-get($style-props, line-height);
+
+  @if $style == "button" {
+    @include mdc-typography-button;
+  }
 }
 
 @mixin mdc-typography-adjust-margin($style) {
@@ -46,4 +50,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@mixin mdc-typography-button {
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-appearance: none;
 }
